@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SeatSwapConnect | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">S</span>
+            <div>
+                <h2>SeatSwap</h2>
+                <p>CONNECT</p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="avatar">A</div>
+            <div>
+                <h3 id="profileName">Arun Kumar</h3>
+                <p>Student Account</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <p class="nav-heading">MENU</p>
+
+            <button class="nav-link active" data-page="dashboard">
+                <span>▦</span> Dashboard
+            </button>
+
+            <button class="nav-link" data-page="seats">
+                <span>▤</span> Available Seats
+            </button>
+
+            <button class="nav-link" data-page="requests">
+                <span>⇄</span> Swap Requests
+            </button>
+
+            <button class="nav-link" data-page="create">
+                <span>＋</span> Create Request
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>SeatSwapConnect</p>
+            <small>Seat Exchange System</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p>Manage your seat exchanges easily.</p>
+            </div>
+
+            <div class="topbar-actions">
+                    <span class="status-badge">
+                        ● Demo Mode
+                    </span>
+
+                <button class="logout-button" id="logoutButton">
+                    Logout
+                </button>
+            </div>
+
+        </header>
+
+
+        <!-- LOGIN SECTION -->
+        <section id="loginSection" class="login-section">
+
+            <div class="login-card">
+
+                <div class="login-logo">S</div>
+
+                <h2>Welcome Back!</h2>
+
+                <p>Login to your SeatSwapConnect account.</p>
+
+                <form id="loginForm">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                    >
+
+                    <label for="password">Password</label>
+
+                    <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                    >
+
+                    <button type="submit" class="primary-button full-width">
+                        Login
+                    </button>
+
+                </form>
+
+                <p class="demo-info">
+                    Demo login: arun@gmail.com<br>
+                    Password: demo123
+                </p>
+
+                <p id="loginMessage" class="message"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPLICATION -->
+        <div id="applicationSection" class="hidden">
+
+
+            <!-- DASHBOARD PAGE -->
+            <section id="dashboardPage" class="page">
+
+                <div class="welcome-banner">
+
+                    <div>
+                        <p class="welcome-small">WELCOME TO SEATSWAPCONNECT</p>
+
+                        <h2>Find your perfect seat!</h2>
+
+                        <p>
+                            View available seats and exchange seats
+                            with other users.
+                        </p>
+                    </div>
+
+                    <div class="banner-icon">⇄</div>
+
+                </div>
+
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">▤</div>
+
+                        <p>Available Seats</p>
+
+                        <h2 id="availableCount">0</h2>
+
+                        <span>Seats available for exchange</span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">⇄</div>
+
+                        <p>Pending Requests</p>
+
+                        <h2 id="pendingCount">0</h2>
+
+                        <span>Requests waiting for response</span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">✓</div>
+
+                        <p>Accepted Requests</p>
+
+                        <h2 id="acceptedCount">0</h2>
+
+                        <span>Successfully accepted requests</span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">▣</div>
+
+                        <p>Total Seats</p>
+
+                        <h2 id="totalCount">0</h2>
+
+                        <span>Seats registered in the system</span>
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Quick Actions</h2>
+                        <p>Choose what you want to do.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button class="action-card" data-go="seats">
+
+                        <div class="action-icon purple">▤</div>
+
+                        <h3>View Available Seats</h3>
+
+                        <p>Explore seats available for swapping.</p>
+
+                        <span>View Seats →</span>
+
+                    </button>
+
+
+                    <button class="action-card" data-go="create">
+
+                        <div class="action-icon green">＋</div>
+
+                        <h3>Create Swap Request</h3>
+
+                        <p>Request an exchange with another user.</p>
+
+                        <span>Create Request →</span>
+
+                    </button>
+
+
+                    <button class="action-card" data-go="requests">
+
+                        <div class="action-icon orange">⇄</div>
+
+                        <h3>Manage Requests</h3>
+
+                        <p>View and manage seat swap requests.</p>
+
+                        <span>View Requests →</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- RECENT REQUESTS -->
+                <div class="content-card">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Recent Swap Requests</h2>
+                            <p>Latest seat exchange activities.</p>
+                        </div>
+
+                        <button class="text-button" data-go="requests">
+                            View All
+                        </button>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                            <tr>
+                                <th>Request ID</th>
+                                <th>Requester</th>
+                                <th>Requested Seat</th>
+                                <th>Offered Seat</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="recentRequestsBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AVAILABLE SEATS PAGE -->
+            <section id="seatsPage" class="page hidden">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Available Seats</h2>
+                        <p>Search and explore seats available for exchange.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="filter-bar">
+
+                    <input
+                            type="text"
+                            id="seatSearch"
+                            placeholder="Search by seat number or location..."
+                    >
+
+                    <select id="seatStatusFilter">
+                        <option value="ALL">All Seats</option>
+                        <option value="AVAILABLE">Available</option>
+                        <option value="SWAPPED">Swapped</option>
+                    </select>
+
+                </div>
+
+
+                <div id="seatGrid" class="seat-grid"></div>
+
+            </section>
+
+
+            <!-- SWAP REQUESTS PAGE -->
+            <section id="requestsPage" class="page hidden">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Swap Requests</h2>
+                        <p>View, accept or reject seat exchange requests.</p>
+                    </div>
+
+                    <button class="primary-button" data-go="create">
+                        + New Request
+                    </button>
+
+                </div>
+
+
+                <div class="filter-bar">
+
+                    <input
+                            type="text"
+                            id="requestSearch"
+                            placeholder="Search requests..."
+                    >
+
+                    <select id="requestStatusFilter">
+                        <option value="ALL">All Statuses</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="ACCEPTED">Accepted</option>
+                        <option value="REJECTED">Rejected</option>
+                    </select>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                            <tr>
+                                <th>Request ID</th>
+                                <th>Requester</th>
+                                <th>Receiver</th>
+                                <th>Requested Seat</th>
+                                <th>Offered Seat</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="requestsTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CREATE REQUEST PAGE -->
+            <section id="createPage" class="page hidden">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Create Swap Request</h2>
+                        <p>Enter the details to request a seat exchange.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-card">
+
+                    <form id="swapRequestForm">
+
+                        <div class="form-group">
+
+                            <label for="requesterId">
+                                Requester ID
+                            </label>
+
+                            <input
+                                    type="number"
+                                    id="requesterId"
+                                    min="1"
+                                    value="1"
+                                    required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="receiverId">
+                                Receiver ID
+                            </label>
+
+                            <input
+                                    type="number"
+                                    id="receiverId"
+                                    min="1"
+                                    value="2"
+                                    required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="requestedSeatId">
+                                Requested Seat
+                            </label>
+
+                            <select id="requestedSeatId" required>
+                                <option value="">Select requested seat</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="offeredSeatId">
+                                Offered Seat
+                            </label>
+
+                            <select id="offeredSeatId" required>
+                                <option value="">Select offered seat</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-note">
+                            Select two different available seats
+                            to create a swap request.
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                    type="button"
+                                    class="secondary-button"
+                                    data-go="dashboard"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                    type="submit"
+                                    class="primary-button"
+                            >
+                                Submit Request
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <p id="requestMessage" class="message"></p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- NOTIFICATION -->
+        <div id="toast" class="toast"></div>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <p>
+                © 2026 SeatSwapConnect.
+                Seat Exchange Management System.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
